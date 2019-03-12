@@ -1,7 +1,5 @@
 # Useful Shortcuts & Tips
 
----
-
 *Shortcuts for applications: VS Code, Bash shell, Git, and Vim*. Also some tips!
 
 *By Travis Lee Presnell*
@@ -26,7 +24,7 @@
 - Terminal	- `Ctrl + tilde` 
 - Search all Files in Project - `Ctrl + Shift + F`
 
----
+
 
 ## Bash
 
@@ -106,7 +104,7 @@
 
 `/var/log/apache/[access.log, error.log]` - Apache Logs.
 
----
+
 
 ## Git
 
@@ -132,7 +130,11 @@
 
 `git merge <branch>` - Merge branch into current.
 
----
+`git remote add origin <url>.git` - Adds remote origin to repo.
+
+`git push -u origin <branch>` - Sets the origin as the default for push calls, then pushes branch.
+
+
 
 ## VIM
 
@@ -190,9 +192,7 @@
 
 
 
----
-
-## Windows
+## Windows 10
 
 ### File Explorer
 
@@ -252,7 +252,7 @@
 
 `Win + Ctrl + F4` - Closes Current Virtual Desktop.
 
----
+
 
 ## Chrome
 
