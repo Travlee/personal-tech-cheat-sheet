@@ -26,7 +26,7 @@
 
 
 
-## Bash
+## Linux Commands
 
 ### Admin
 
@@ -62,6 +62,14 @@
 
 `a2enmod <mod>, a2dismod <mod>` - Apache enable/disenable mods.
 
+`mkdir /mnt/ram && mount -t tmpfs tmpfs /mnt/ram -o size=8192M` - Creates a super fast ram disk.
+
+`mkdir -p folder/{sub1,sub2}/{sub1,sub2,sub3}` - Quickly create directory structure.
+
+`ssh -L 8000:127.0.0.1:80root@remoteserver.org -N` - Creates a tunnel from remote service on port 80 to local port 8000.
+
+`disown -a && exit` - Disconnects all processes from current terminal and exits, leaving all processes started by that terminal to remain running.
+
 ### Other
 
 `cat` - Outputs contents of files.
@@ -84,6 +92,10 @@
 
 `find | grep -[i=ignorecase] <string>` - Find files "hack."
 
+`sudo !!` - Run last used command as root.
+
+`fc` - Opens last command ran in editor to make changes more easily, then runs once saved.
+
 ### Window
 
 `Shift + PageUp/Down` - Scroll lines in terminal.
@@ -95,6 +107,8 @@
 `Ctrl + K`  - Clears Current Line in Front of Cursor.
 
 `Ctrl + U` - Clears last word.
+
+`Ctrl + X + E` - Opens an editor to type commands.
 
 ### Important Files
 
