@@ -8,21 +8,35 @@
 
 ## Visual Studio Code
 
-- Close file - `Ctrl + W`
-- Toggle File Explorer `Ctrl + B`
-- Switch Editors - `Ctrl + PageUp/Down`
-- Navigate to File - `Ctrl + P`
-- Navigate to Symbol - `Ctrl + Shift + O`
-- Get Definition - `F2`
-- Get all References - `Shift + F2`
-- File History  - `Ctrl + Tab`
-- Select Line - `Ctrl + I`
-- Open Problems - `Ctrl + Shift + M`
-- Select All Occurrences - `Ctrl + Shift + L`
-- Go to Line - `Ctrl + G`
-- Focus Next Editor Group - `Ctrl + Page Down/Up`
-- Terminal	- `Ctrl + tilde` 
-- Search all Files in Project - `Ctrl + Shift + F`
+`Ctrl + W` - Closes active file
+
+`Ctrl + B` - Toggle File Explorer
+
+`Ctrl + PageUp/Down` - Cycle editors
+
+`Ctrl + P` - Navigate to File
+
+`Ctrl + Shift + O` - Navigate to Symbol
+
+`F2` - Get Definition
+
+`Shift + F2` - Get all References
+
+`Ctrl + Tab` - File History
+
+`Ctrl + I` - Select Line
+
+`Ctrl + Shift + M` - Open Problems
+
+`Ctrl + Shift + L` - Select All Occurrences
+
+`Ctrl + G` - Go to Line
+
+`Ctrl + Page Down/Up` - Focus Next Editor Group
+
+`Ctrl + tilde` - Terminal
+
+`Ctrl + Shift + F` - Search all Files in Project
 
 
 
@@ -54,7 +68,7 @@
 
 `ps` - Shows processes on machine.
 
-`top` - Realtime process info. 
+`top` - Realtime process info.
 
 `a2ensite, a2dissite` - Apache enable/disable sites config.
 
@@ -76,27 +90,31 @@
 
 `mkdir` - Makes a directory.
 
-`echo <variable>` - Outputs to stout. 
+`echo <variable>` - Outputs to stout.
 
 `ssh user@host` - SSH to user on host.
 
-`grep -[v=NOT] <pattern> <file>` - Regex to search input. 
+`grep -[v=NOT] <pattern> <file>` - Regex to search input.
 
 `rm -[r=recursive, f=force]` - Removes file.
 
-`tails -[f=realtime, n=lines, v=verbose] <path>` - Outputs last 10 lines of files.
+`tails -[f=realtime, n=lines, v=verbose] <path>` - Outputs last *n* lines of a file.
 
 `watch tail <file>` - Another way to watch a file in real time.
 
 `find -type [f=file] -[iname=ignorecasename] <string> -print` - Find Files.
 
-`find | grep -[i=ignorecase] <string>` - Find files "hack."
+`find | grep -[i=ignorecase] <string>` - Find files *hacky*.
+
+`find / -[name=filename, iname=filenameIGNORECASE]iname "*.s*"` - Finds all files in root that have an s in its extension.
+
+`find . -path "*"` `find . -type d` - Finds all directories in pwd.
 
 `sudo !!` - Run last used command as root.
 
 `fc` - Opens last command ran in editor to make changes more easily, then runs once saved.
 
-### Window
+### Terminal
 
 `Shift + PageUp/Down` - Scroll lines in terminal.
 
@@ -117,6 +135,8 @@
 `/var/log/auth.log` - Authorization Log File.
 
 `/var/log/apache/[access.log, error.log]` - Apache Logs.
+
+`/etc/os-release` - Operating system information.
 
 
 
@@ -146,6 +166,8 @@
 
 `git remote add origin <url>.git` - Adds remote origin to repo.
 
+`git remote -v` - Shows your current remote origin/fetch urls.
+
 `git push -u origin <branch>` - Sets the origin as the default for push calls, then pushes branch.
 
 
@@ -172,7 +194,7 @@
 
 `yy` - "Yanks" the whole line.
 
-`12yy` - "Yanks" 12 lines. 
+`12yy` - "Yanks" 12 lines.
 
 `x` - Cuts character under cursor.
 
@@ -202,7 +224,7 @@
 
 `G$` - End of file.
 
-### Buffer 
+### Buffer
 
 
 
