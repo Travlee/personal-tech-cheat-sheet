@@ -170,6 +170,7 @@
 
 `git push -u origin <branch>` - Sets the origin as the default for push calls, then pushes branch.
 
+`git commit --amend --reuse-message HEAD` - Commits current changes with last commit message.
 
 
 ## VIM
@@ -305,3 +306,12 @@
 `Ctrl + L` - Focuses search box.
 
 `Alt + ArrowKeys` - History: back & forward.
+
+
+## MySQL
+
+`DROP TABLE [IF EXISTS] <name>;`
+
+`DROP VIEW [IF EXISTS] <name>;`
+
+`mysql -u username -p database_name < database_name.sql`
