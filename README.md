@@ -38,6 +38,10 @@
 
 `Ctrl + Shift + F` - Search all Files in Project
 
+`Ctrl + K, F` - Closes working dir.
+
+`Ctrl + K, Ctrl + O` - Open working dir.
+
 
 
 ## Linux Commands
@@ -94,15 +98,23 @@
 
 `ssh user@host` - SSH to user on host.
 
-`grep -[v=NOT] <pattern> <file>` - Regex to search input.
+`grep -[v=NOT] <pattern> <dir>` - Regex to search input.
+
+`grep -[P=Regex][r=recursive][i=ignorecase] <pattern> <dir>` - Finds pattern in files.
 
 `rm -[r=recursive, f=force]` - Removes file.
 
-`tails -[f=realtime, n=lines, v=verbose] <path>` - Outputs last *n* lines of a file.
+`tail -[f=realtime, n=lines, v=verbose] <path>` - Outputs last *n* lines of a file.
+
+`tail -f <name> | grep <search_term>` - Pipes the live file to grep.
 
 `watch tail <file>` - Another way to watch a file in real time.
 
-`find -type [f=file] -[iname=ignorecasename] <string> -print` - Find Files.
+`locate <file>` - Searches index-db for files.
+
+`sudo updatedb` - Updates index-db for `locate`.
+
+`find <path> -type [f=file, d=dir] -[iname=ignorecasename] <string> -print` - Find Files.
 
 `find | grep -[i=ignorecase] <string>` - Find files *hacky*.
 
@@ -114,6 +126,10 @@
 
 `fc` - Opens last command ran in editor to make changes more easily, then runs once saved.
 
+`yes | command` - Pipes yes input to command or script.
+
+`> filename` - Empties a file without deleting it.
+
 ### Terminal
 
 `Shift + PageUp/Down` - Scroll lines in terminal.
@@ -122,9 +138,11 @@
 
 `Ctrl + A` - Moves Cursor to Beginning of Line.
 
+`Ctrl + E` - Moves to end of line.
+
 `Ctrl + K`  - Clears Current Line in Front of Cursor.
 
-`Ctrl + U` - Clears last word.
+`Ctrl + W` - Clears last word.
 
 `Ctrl + X + E` - Opens an editor to type commands.
 
@@ -171,6 +189,12 @@
 `git push -u origin <branch>` - Sets the origin as the default for push calls, then pushes branch.
 
 `git commit --amend --reuse-message HEAD` - Commits current changes with last commit message.
+
+`git stash list` - Lists all stash objects.
+
+`git stash pop` - Pops the top-most stash entry to working dir and removes entry from stash list.
+
+`git stash apply` - Pops the top-most 
 
 
 ## VIM
@@ -246,6 +270,8 @@
 `Ctrl + Z` - Undo.
 
 `Ctrl + Y` - Redo.
+
+`Alt + ArrowKeys` - Backwards & Forwards through history.
 
 ### Desktop
 
@@ -344,7 +370,7 @@
 
 `docker system prune`
 
-`docker create -v /var/lib/mysql --name mysqldata mysql:5.7` - Creates a data volumn with mysql image
+`docker create -v /var/lib/mysql --name mysqldata mysql:5.7` - Creates a data volume with the mysql image
 
 `docker run --name dev-container -volumes-from mysqldata -e MYSQL_ROOT_PASSWORD=root -p 3307:3306 base-image:latest`
 
@@ -364,3 +390,31 @@
 ## PHP
 
 `php -S localhost:8080` - Built-in PHP dev web-server
+
+`php -S localhost:8080 -c /etc/php/7.2/apache2/php.ini ` - Built-in PHP web-server with specific ini file.
+
+```php
+// PHP Class Auto-loader
+spl_autoload_register(function ($class) {
+	include "path" . $class . ".class.php";
+});
+```
+
+```php
+// PHP Convert Errors to Exceptions
+set_error_handler(function($errorNumber, $errorMessage, $errorFile, $errorLine) {
+    throw new \ErrorException($errorMessage, 0, $errorNumber, $errorFile, $errorLine);
+});
+```
+
+```php
+// PHP Register Shut-down Function - Handle Errors
+register_shutdown_function(function() {
+    $errorData = error_get_last();
+    if (is_array($errorData)) {
+        ob_end_clean();
+        echo 'Error occured! - ' . $errorData['message'];
+    }
+});
+```
+
