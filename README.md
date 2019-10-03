@@ -54,7 +54,7 @@
 
 `apt-get update && apt-get upgrade` - Updates package-list THEN installs new packages.
 
-`chown` - Changes ownership of directory/file.
+`chown user:group <target>` - Changes ownership of directory/file.
 
 `chgrp` - Changes group of directory/file.
 
@@ -87,6 +87,8 @@
 `ssh -L 8000:127.0.0.1:80root@remoteserver.org -N` - Creates a tunnel from remote service on port 80 to local port 8000.
 
 `disown -a && exit` - Disconnects all processes from current terminal and exits, leaving all processes started by that terminal to remain running.
+
+`export ENVVAR="value"` - Defines an environment variable for current shell-env. 
 
 ### Other
 
@@ -129,6 +131,12 @@
 `yes | command` - Pipes yes input to command or script.
 
 `> filename` - Empties a file without deleting it.
+
+`export NEWENVVAR="new env variable"` - Creates a new environment variable
+
+`curl [-I = headers,] <url>` - Curl 
+
+`history | grep <filter>` - Search bash history 
 
 ### Terminal
 
@@ -385,6 +393,8 @@
 `docker images`
 
 `docker volume ls`
+
+`docker run -e "env_var_name=value" <image>` - Runs a container with supplied environment variable
 
 
 ## PHP
