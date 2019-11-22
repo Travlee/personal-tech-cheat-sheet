@@ -44,7 +44,7 @@
 
 
 
-## Linux Commands
+## Linux
 
 ### Admin
 
@@ -72,6 +72,8 @@
 
 `ps` - Shows processes on machine.
 
+`ps -eH | less` - Shows process by all accounts into a hierarchy.
+
 `top` - Realtime process info.
 
 `a2ensite, a2dissite` - Apache enable/disable sites config.
@@ -90,9 +92,15 @@
 
 `export ENVVAR="value"` - Defines an environment variable for current shell-env. 
 
+`sed 's/\([0-9]\{1,3\}\.\)\{3,3\}[0-9]\{1,3\}/x.x.x.x/g' in.txt > out.txt` - Remove all IPs from a file.
+
+`source ~/.bashrc ` OR `. ~/.bashrc` OR `exec bash` - Reloads bashrc file.
+
 ### Other
 
 `cat` - Outputs contents of files.
+
+`cat >> file` - Cat in appendmode.
 
 `mkdir` - Makes a directory.
 
@@ -156,13 +164,53 @@
 
 ### Important Files
 
-`/etc/passwd` - All user accounts and information.
+`/etc/passwd` - User account information.
+
+`/etc/shadow` - Secret user account information.
 
 `/var/log/auth.log` - Authorization Log File.
 
 `/var/log/apache/[access.log, error.log]` - Apache Logs.
 
 `/etc/os-release` - Operating system information.
+
+### Misc
+
+Add an alias to sudoers file - 
+
+```bash
+sudo visudo
+...
+# Creates a user alias to be referenced later
+User_Alias INSTALLERS = lee, zooey
+
+# Gives all users in INSTALLERS access to apt-get with sudo
+INSTALLERS	ALL=/usr/bin/apt-get
+...
+```
+
+Bash script to test environment variables/directories/symbolic links
+
+```bash
+#!/bin/bash
+
+# Test environment variable
+if [ -z "$TEST_ENVVAR" ]; then
+	echo "Environment variable doesn't exist!"
+fi
+# Inline
+if [ -z "$TEST_ENVVAR" ]; then echo "Environment variable doesn't exist!"; fi
+
+# Test if directory exists
+if [ -d /path/to/dir ]; then echo "Found directory!"; fi
+
+# Test for symbolic link
+if [ -L /path/to/link ]; then echo "Found link!"; fi
+
+# Test for file
+if [ -e /path/to/file ]; then echo "Found file!"; fi
+
+```
 
 
 
@@ -256,6 +304,8 @@
 `G` - Fixes indents throughout the whole file.
 
 `G$` - End of file.
+
+`gg dG` - Deletes all lines in file
 
 ### Buffer
 
@@ -390,11 +440,17 @@
 
 `docker build -t base-image:latest .` - Finds a dockerfile in the localdir and builds the image and tags it with base-image:latest
 
+`docker build -t image_name:tag --build-arg arg_name=arg_value .` - Builds an image with build-time environment variables
+
 `docker images`
 
 `docker volume ls`
 
 `docker run -e "env_var_name=value" <image>` - Runs a container with supplied environment variable
+
+`docker exec -it <container-name> /bin/bash` - Attack to running container; run bash
+
+`docker stats` - Container resource usage information
 
 
 ## PHP
