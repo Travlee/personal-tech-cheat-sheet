@@ -293,8 +293,6 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 `/text` - Search for 'text' after the cursor.
 
-`:noh` - Clear last search highlight.
-
 `n` - Find next occurrence after searching.
 
 `gg` - Takes you to the top of the code.
@@ -306,6 +304,14 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 `G$` - End of file.
 
 `gg dG` - Deletes all lines in file
+
+`:f` - Show file info?
+
+### Config
+
+`:noh` - Clear last search highlight.
+
+`:set number` - Enables line numbers
 
 ### Buffer
 
