@@ -96,6 +96,12 @@
 
 `source ~/.bashrc ` OR `. ~/.bashrc` OR `exec bash` - Reloads bashrc file.
 
+`crontab -l` - List running cronjobs.
+
+`crontah -e` - Edit current user's cronjobs.
+
+`find / 2>/dev/null | grep -i "pattern"` - Find files & hide stderr output.
+
 ### Other
 
 `cat` - Outputs contents of files.
@@ -174,6 +180,8 @@
 
 `/etc/os-release` - Operating system information.
 
+`/etc/environment` - Ubuntu environment file; update env vars.
+
 ### Misc
 
 Add an alias to sudoers file - 
@@ -235,6 +243,8 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 `git branch -[d=Delete, m=Rename] <branch> <newname>` - Shows branches.
 
 `git checkout -[b=NewBranch] <branch>` - Changes current branch.
+
+`git checkout -- <file>` - Resets a file to HEAD.
 
 `git merge <branch>` - Merge branch into current.
 
