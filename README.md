@@ -126,6 +126,8 @@
 
 `watch tail <file>` - Another way to watch a file in real time.
 
+`lnav <file> <file2> ...` - Better way to watch log files for extended periods. REQUIRES LNAV PACKAGE!
+
 `locate <file>` - Searches index-db for files.
 
 `sudo updatedb` - Updates index-db for `locate`.
