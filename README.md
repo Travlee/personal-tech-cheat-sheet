@@ -106,7 +106,7 @@
 
 `cat` - Outputs contents of files.
 
-`cat >> file` - Cat in appendmode.
+`cat >> file` - Cat in append mode.
 
 `mkdir` - Makes a directory.
 
@@ -114,9 +114,7 @@
 
 `ssh user@host` - SSH to user on host.
 
-`grep -[v=NOT] <pattern> <dir>` - Regex to search input.
-
-`grep -[P=Regex][r=recursive][i=ignorecase] <pattern> <dir>` - Finds pattern in files.
+`grep -[P=Regex, F=ignore_special_charatcers, r=recursive, i=ignorecase, n=line_number, c=count, v=inverse] <pattern> <path>` - Searching input for patterns.
 
 `rm -[r=recursive, f=force]` - Removes file.
 
@@ -132,11 +130,13 @@
 
 `sudo updatedb` - Updates index-db for `locate`.
 
-`find <path> -type [f=file, d=dir] -[iname=ignorecasename] <string> -print` - Find Files.
+`find <path> -[type f=file, d=dir] -[iname=ignore_case] -[time <days_since_accessed>]<pattern> -print` - Find Files.
+
+`find / -size -5M -and -size +2M` - Finds files in root larger than 2MB and smaller than 5MB.
 
 `find | grep -[i=ignorecase] <string>` - Find files *hacky*.
 
-`find / -[name=filename, iname=filenameIGNORECASE]iname "*.s*"` - Finds all files in root that have an s in its extension.
+`find / -[name=filename, iname=filenameIGNORECASE] "*.s*"` - Finds all files in root that have an s in its extension.
 
 `find . -path "*"` `find . -type d` - Finds all directories in pwd.
 
@@ -169,6 +169,8 @@
 `Ctrl + W` - Clears last word.
 
 `Ctrl + X + E` - Opens an editor to type commands.
+
+`Ctrl + R` - Live bash history search
 
 ### Important Files
 
@@ -263,6 +265,19 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 `git stash pop` - Pops the top-most stash entry to working dir and removes entry from stash list.
 
 `git stash apply` - Pops the top-most 
+
+`git mergetool` - See merge conflicts
+
+### Examples
+
+```bash
+# Checkout ours/theirs to solve merge conflicts
+git checkout [--ours, --theirs] filename.c
+git add filename.c
+git pull origin master
+```
+
+
 
 
 ## VIM
@@ -425,6 +440,12 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 `SHOW CREATE VIEW <view>;`
 
 `... WHERE <field> LIKE 'string%';`
+
+`DELETE FROM <table> WHERE <condition...>;`
+
+`INSERT INTO <table> (<column>...) VALUES (<value>...);`
+
+`SELECT * FROM <table> WHERE <condition>;`
 
 
 ## Docker
