@@ -54,7 +54,7 @@
 
 `apt-get update && apt-get upgrade` - Updates package-list THEN installs new packages.
 
-`chown user:group <target>` - Changes ownership of directory/file.
+`chown -[R recursive,] user:group <file>` - Changes ownership of directory/file.
 
 `chgrp` - Changes group of directory/file.
 
@@ -90,7 +90,7 @@
 
 `disown -a && exit` - Disconnects all processes from current terminal and exits, leaving all processes started by that terminal to remain running.
 
-`export ENVVAR="value"` - Defines an environment variable for current shell-env. 
+`export ENVVAR="value"` - Defines an environment variable for current shell-env.
 
 `sed 's/\([0-9]\{1,3\}\.\)\{3,3\}[0-9]\{1,3\}/x.x.x.x/g' in.txt > out.txt` - Remove all IPs from a file.
 
@@ -101,6 +101,8 @@
 `crontah -e` - Edit current user's cronjobs.
 
 `find / 2>/dev/null | grep -i "pattern"` - Find files & hide stderr output.
+
+`scp -[i identityfile, ] <target> <user@host:/tmp/destination>` - Secure copy to/from remote host.
 
 ### Other
 
@@ -150,9 +152,9 @@
 
 `export NEWENVVAR="new env variable"` - Creates a new environment variable
 
-`curl [-I = headers,] <url>` - Curl 
+`curl [-I = headers,] <url>` - Curl
 
-`history | grep <filter>` - Search bash history 
+`history | grep <filter>` - Search bash history
 
 ### Terminal
 
@@ -188,7 +190,7 @@
 
 ### Misc
 
-Add an alias to sudoers file - 
+Add an alias to sudoers file -
 
 ```bash
 sudo visudo
@@ -238,7 +240,7 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 `git ls-files` - Show tracked files.
 
-`git commit -[a=AllTracked, m=Message] <msg?>` - Makes a commit.
+`git commit -[a=AllTracked, m=Message, ] --[ammend=Ammends previous commit, no-edit=Keeps commit message, reuse-message HEAD=Keeps commit msg from HEAD, ] <msg?>` - Makes a commit.
 
 `git diff <file?>` - Shows changes.
 
@@ -258,13 +260,17 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 `git push -u origin <branch>` - Sets the origin as the default for push calls, then pushes branch.
 
-`git commit --amend --reuse-message HEAD` - Commits current changes with last commit message.
+`git stash -[u=Untracked Files, ]` - Stash working dir.
 
 `git stash list` - Lists all stash objects.
 
 `git stash pop` - Pops the top-most stash entry to working dir and removes entry from stash list.
 
-`git stash apply` - Pops the top-most 
+`git stash apply` - Pops the top-most, keep changes in stash.
+
+`git stash save "desc."` - Saves working dir with name/desc.
+
+`git stash drop stash@{0}` - Drops stash at index 0.
 
 `git mergetool` - See merge conflicts
 
