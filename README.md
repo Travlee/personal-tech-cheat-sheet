@@ -42,6 +42,7 @@
 
 `Ctrl + K, Ctrl + O` - Open working dir.
 
+`Alt + F12` - Peak definition.
 
 
 ## Linux
@@ -61,6 +62,8 @@
 `chmod [u,g,o,a] [+,-][r,w] <file>` - Changes permissions of directory/file.
 
 `mount -[l=List, a=Reload]` - Mount points from fstab file.
+
+`lsblk` - List all devices and partitions.
 
 `w` - Shows logged in users and what they are doing.
 
@@ -228,6 +231,21 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 ```
 
+### Common Processes
+
+```bash
+	# List drives/partitions, then mount to see contents ##########
+	
+	# Show drives/partitions
+	lslbk
+
+	# Mount partition
+	sudo mkdir /mnt/tmp && sudo mount /dev/sdX /mnt/tmp
+
+	# See contents..
+	ls -la /mnt/tmp
+```
+
 
 
 ## Git
@@ -236,7 +254,7 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 `git add [<file>, <file>, ...]` - Tracks new file(s).
 
-`git rm --cached <file>` - Stops tracking file, doesn't delete from filesystem.
+`git rm --cached <file>` - Stops tracking file in repo, doesn't delete from filesystem.
 
 `git status` - Shows state of current branch.
 
@@ -252,15 +270,21 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 `git checkout -[b=NewBranch] <branch>` - Changes current branch.
 
-`git checkout -- <file>` - Resets a file to HEAD.
+`git checkout -- <file>` - Resets a file to HEAD, ignoring local changes.
 
-`git merge <branch>` - Merge branch into current.
+`git merge [--squash="Collaspe all commit in merging branch to single."] <branch>` - Merge branch into current.
+
+`git mergetool` - See merge conflicts.
 
 `git remote add origin <url>.git` - Adds remote origin to repo.
 
 `git remote -v` - Shows your current remote origin/fetch urls.
 
+`git reset [--hard=Ignores local changes, --soft=Keeps local changes]` - Resets all files to last commit.
+
 `git push -u origin <branch>` - Sets the origin as the default for push calls, then pushes branch.
+
+`git push origin --delete <branch>` - Deletes remote branch.
 
 `git stash -[u=Untracked Files, ]` - Stash working dir.
 
@@ -274,7 +298,7 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 `git stash drop stash@{0}` - Drops stash at index 0.
 
-`git mergetool` - See merge conflicts
+
 
 ### Examples
 
@@ -504,6 +528,17 @@ git pull origin master
 
 - Turn on snapping to face when moving things: top of the window click **Snap**, then **Face** and **Project Individual Elements**.
 
+## Gimp2
+
+`[ ]` - Increase/decrease size of brush.
+
+#### Paths Tool
+
+`Ctrl + Click` - Adds a new node.
+
+`Ctrl + Drag` - Realign node?
+
+`Shift + Ctrl + Click` - Delete node.
 
 ## Chrome
 
