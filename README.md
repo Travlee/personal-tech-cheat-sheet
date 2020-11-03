@@ -28,6 +28,8 @@
 
 `Ctrl + Shift + M` - Open Problems
 
+`Ctrl + Shift + U` - Open Output
+
 `Ctrl + Shift + L` - Select All Occurrences
 
 `Ctrl + G` - Go to Line
@@ -43,6 +45,20 @@
 `Ctrl + K, Ctrl + O` - Open working dir.
 
 `Alt + F12` - Peak definition.
+
+
+
+## Windows Terminal
+
+`Ctrl + Shift + W` - Close Tab/Pane
+
+`Ctrl + T` - New Tab
+
+`Shift + Alt + [-, +]` - New *pane* split horizontal and vertical, respectively 
+
+`Alt + [Left, Right, Up, Down]` - Shift pane focus
+
+
 
 
 ## Linux
@@ -266,6 +282,8 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 `git log [--graph?]` - Shows log of commits.
 
+`git log --all -- <filename>` - Searches through git history for file.
+
 `git branch -[d=Delete, m=Rename] <branch> <newname>` - Shows branches.
 
 `git checkout -[b=NewBranch] <branch>` - Changes current branch.
@@ -297,6 +315,8 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 `git stash save "desc."` - Saves working dir with name/desc.
 
 `git stash drop stash@{0}` - Drops stash at index 0.
+
+`git show --pretty="" --name-only <commit hash>` - Shows new files in commit.
 
 
 
