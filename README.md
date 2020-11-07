@@ -350,6 +350,21 @@ git push -f						# force-push to remote feature branch
 
 
 
+**Git Add Patch-mode**
+
+```bash
+git add -p 	# enter patch-mode to select hunks of a file to be commited
+# y - stage this hunk
+# n - do not stage this hunk
+# q - quit; do not stage this hunk nor any of the remaining ones
+# a - stage this hunk and all that follow
+# d - do not this hunk or any that follow
+# s - split current hunk into more
+# ? - help
+```
+
+
+
 
 ## VIM
 
