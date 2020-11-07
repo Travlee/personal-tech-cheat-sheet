@@ -322,6 +322,10 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 ### Examples
 
+
+
+**Merge Conflicts**
+
 ```bash
 # Checkout ours/theirs to solve merge conflicts
 git checkout [--ours, --theirs] filename.c
