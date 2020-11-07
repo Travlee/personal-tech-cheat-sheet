@@ -335,6 +335,21 @@ git pull origin master
 
 
 
+**Rebase Git-flow**
+
+```bash
+git checkout master
+git pull 						# update master first
+git checkout feature-branch
+git rebase master 				# rebase feature to master
+# git mergetool 				# solve merge issues, if any
+git rebase --continue 			# continue rebase after fixing merge issues
+# git rebase --abort 			# discard rebase if needed
+git push -f						# force-push to remote feature branch
+```
+
+
+
 
 ## VIM
 
