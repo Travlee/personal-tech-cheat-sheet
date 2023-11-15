@@ -1,13 +1,7 @@
-# Useful Shortcuts & Tips
+# Tech Cheat Sheet
+Cheat codes for all things tech
 
-*Shortcuts for applications: VS Code, Bash shell, Git, and Vim*. Also some tips!
-
-*By Travis Lee Presnell*
-
-
-
-## Visual Studio Code
-
+# Visual Studio Code
 `Ctrl + W` - Closes active file
 
 `Ctrl + B` - Toggle File Explorer
@@ -46,64 +40,62 @@
 
 `Alt + F12` - Peak definition.
 
+`Ctrl + K , Ctrl + I` - DEFAULT Show hover.
 
+`Ctrl + E` - Show hover.
 
-## Windows Terminal
+# Windows Terminal
 
 `Ctrl + Shift + W` - Close Tab/Pane
 
 `Ctrl + T` - New Tab
 
-`Shift + Alt + [-, +]` - New *pane* split horizontal and vertical, respectively 
+`Shift + Alt + [-, +]` - New *pane* split horizontal and vertical, respectively
 
 `Alt + [Left, Right, Up, Down]` - Shift pane focus
 
+# Linux
 
+## Admin
+`lastlog` - Shows a list of all accounts and their date of login
 
+`apt-cache search <string>` - With Debian systems, searches packages for pattern
 
-## Linux
+`apt-get update && apt-get upgrade` - Updates package-list THEN installs new packages
 
-### Admin
+`chown -[R recursive,] user:group <file>` - Changes ownership of directory/file
 
-`lastlog` - Shows a list of all accounts and their date of login.
+`chgrp` - Changes group of directory/file
 
-`apt-cache search <string>` - With Debian systems, searches packages for pattern.
+`chmod [u,g,o,a] [+,-][r,w] <file>` - Changes permissions of directory/file
 
-`apt-get update && apt-get upgrade` - Updates package-list THEN installs new packages.
+`mount -[l=List, a=Reload]` - Mount points from fstab file
 
-`chown -[R recursive,] user:group <file>` - Changes ownership of directory/file.
+`lsblk` - List all devices and partitions
 
-`chgrp` - Changes group of directory/file.
+`w` - Shows logged in users and what they are doing
 
-`chmod [u,g,o,a] [+,-][r,w] <file>` - Changes permissions of directory/file.
+`last` - History of recent account logs
 
-`mount -[l=List, a=Reload]` - Mount points from fstab file.
+`ifconfig` - Network interfaces
 
-`lsblk` - List all devices and partitions.
+`ln -s <target> <destination>` - Makes a symbolic link
 
-`w` - Shows logged in users and what they are doing.
+`ps` - Shows processes on machine
 
-`last` - History of recent account logs.
+`ps -eH | less` - Shows process by all accounts into a hierarchy
 
-`ifconfig` - Network interfaces.
+`top` - Realtime process info
 
-`ln -s <target> <destination>` - Makes a symbolic link.
+`a2ensite, a2dissite` - Apache enable/disable sites config
 
-`ps` - Shows processes on machine.
+`apache2ctl -S` - Apache Service status w/ Virtual Hosts
 
-`ps -eH | less` - Shows process by all accounts into a hierarchy.
+`a2enmod <mod>, a2dismod <mod>` - Apache enable/disenable mods
 
-`top` - Realtime process info.
+`mkdir /mnt/ram && mount -t tmpfs tmpfs /mnt/ram -o size=8192M` - Creates a super fast ram disk
 
-`a2ensite, a2dissite` - Apache enable/disable sites config.
-
-`apache2ctl -S` - Apache Service status w/ Virtual Hosts.
-
-`a2enmod <mod>, a2dismod <mod>` - Apache enable/disenable mods.
-
-`mkdir /mnt/ram && mount -t tmpfs tmpfs /mnt/ram -o size=8192M` - Creates a super fast ram disk.
-
-`mkdir -p folder/{sub1,sub2}/{sub1,sub2,sub3}` - Quickly create directory structure.
+`mkdir -p folder/{sub1,sub2}/{sub1,sub2,sub3}` - Quickly create directory structure
 
 `ssh -L 8000:127.0.0.1:80root@remoteserver.org -N` - Creates a tunnel from remote service on port 80 to local port 8000.
 
@@ -117,7 +109,7 @@
 
 `crontab -l` - List running cronjobs.
 
-`crontah -e` - Edit current user's cronjobs.
+`crontab -e` - Edit current user's cronjobs.
 
 `find / 2>/dev/null | grep -i "pattern"` - Find files & hide stderr output.
 
@@ -125,7 +117,7 @@
 
 `iptables -L` - Firewall rules.
 
-### Other
+## Other
 
 `cat` - Outputs contents of files.
 
@@ -177,25 +169,27 @@
 
 `history | grep <filter>` - Search bash history
 
-### Terminal
+## Terminal/Shell
 
 `Shift + PageUp/Down` - Scroll lines in terminal.
 
-`Ctrl + U` - Clears current line behind cursor.
+`Ctrl + u` - Clears current line behind cursor.
 
-`Ctrl + A` - Moves Cursor to Beginning of Line.
+`Ctrl + w` - Clears last word.
 
-`Ctrl + E` - Moves to end of line.
+`Ctrl + x + x` - Toggle between start and current cursor position
 
-`Ctrl + K`  - Clears Current Line in Front of Cursor.
+`Ctrl + a/e` - Moves Cursor to beginning or end of command
 
-`Ctrl + W` - Clears last word.
+`Alt + f/b` - Move cursor to previous/next word
 
-`Ctrl + X + E` - Opens an editor to type commands.
+`Ctrl + x + e` - Opens an editor to type commands.
 
-`Ctrl + R` - Live bash history search
+`Ctrl + r` - Bash history search
 
-### Important Files
+`Ctrl + d` - Kills shell
+
+## Important Files
 
 `/etc/passwd` - User account information.
 
@@ -209,10 +203,9 @@
 
 `/etc/environment` - Ubuntu environment file; update env vars.
 
-### Misc
+## Misc
 
 Add an alias to sudoers file -
-
 ```bash
 sudo visudo
 ...
@@ -225,7 +218,6 @@ INSTALLERS	ALL=/usr/bin/apt-get
 ```
 
 Bash script to test environment variables/directories/symbolic links
-
 ```bash
 #!/bin/bash
 
@@ -247,24 +239,7 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 ```
 
-### Common Processes
-
-```bash
-	# List drives/partitions, then mount to see contents ##########
-	
-	# Show drives/partitions
-	lslbk
-
-	# Mount partition
-	sudo mkdir /mnt/tmp && sudo mount /dev/sdX /mnt/tmp
-
-	# See contents..
-	ls -la /mnt/tmp
-```
-
-
-
-## Git
+# Git
 
 `git init` - Initializes git for the pwd; adds git files.
 
@@ -298,7 +273,9 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 `git remote -v` - Shows your current remote origin/fetch urls.
 
-`git reset [--hard=Ignores local changes, --soft=Keeps local changes]` - Resets all files to last commit.
+`git reset [--hard="Ignores local changes", --soft="Keeps local changes"]` - Resets all files to last commit.
+
+`git reset --soft HEAD~1` - Undo last commit and drop changes into working dir.
 
 `git push -u origin <branch>` - Sets the origin as the default for push calls, then pushes branch.
 
@@ -316,15 +293,13 @@ if [ -e /path/to/file ]; then echo "Found file!"; fi
 
 `git stash drop stash@{0}` - Drops stash at index 0.
 
+`git stash push -[u untracked] -[m message] path/to/file` - Stash a single untracked file
+
 `git show --pretty="" --name-only <commit hash>` - Shows new files in commit.
 
+## Examples
 
-
-### Examples
-
-
-
-**Merge Conflicts**
+### Merge Conflicts
 
 ```bash
 # Checkout ours/theirs to solve merge conflicts
@@ -333,26 +308,42 @@ git add filename.c
 git pull origin master
 ```
 
-
-
-**Rebase Git-flow**
+### Rebase Git-flow
 
 ```bash
-git checkout master && git pull # update master first
-git checkout feature-branch		# get on feature branch to rebase
-git rebase master 				# rebase feature to master
-# git mergetool 				# solve merge issues, if any
-git rebase --continue 			# continue rebase after fixing merge issues
-# git rebase --abort 			# discard rebase if needed
-git push -f						# force-push to remote feature branch
+# update master first
+git checkout master && git pull
+
+# get on feature branch to rebase
+git checkout feature-branch
+
+# Add a tag to go back to, should something go wrong
+git tag BACKUP
+
+# rebase feature to master
+git rebase master
+
+# solve merge issues, if any
+git mergetool
+
+# continue rebase after fixing merge issues
+git rebase --continue
+
+# discard rebase if needed
+# git rebase --abort
+# git reset --hard BACKUP
+
+# force-push to remote feature branch
+git push -f
 ```
 
-
-
-**Git Add Patch-mode**
+### Git Add Patch-mode
 
 ```bash
-git add -p 	# enter patch-mode to select hunks of a file to be commited
+# enter patch-mode to select hunks of a file to be commited
+git add -p
+
+# HELP
 # y - stage this hunk
 # n - do not stage this hunk
 # q - quit; do not stage this hunk nor any of the remaining ones
@@ -362,12 +353,89 @@ git add -p 	# enter patch-mode to select hunks of a file to be commited
 # ? - help
 ```
 
+### Replace local changes with Remote
 
+```bash
+# fetch changes from remote
+git fetch
 
+# reset your local to remote
+git reset --hard origin/remote
+```
 
-## VIM
+# Tmux
 
-### Insert Mode
+`tux new` `tmux new-session` - Starts a new session
+
+`tmux list-session` - Lists sessions
+
+`tmux attach [-t session_name]` - Attaches to running session
+
+`tmux kill-session -a [-t session_name]` - Kills all sessions; optional save supplied session
+
+## Sessions
+
+`prefix + d` - Detach
+
+`prefix + $` - Rename session
+
+`prefix + w` - Session list
+
+`prefix + (` - Switch to the previous session
+
+`prefix + )` - Switch to the next session
+
+## Windows
+
+`prefix + c` - Creates new window
+
+`prefix + ,` - Renames current window
+
+`prefix + &` - Close current window
+
+`prefix + 0..9` - Select window by number
+
+`prefix + l` - Switches to the last active window
+
+`prefix + p` - Switches to the previous window
+
+`prefix + n` - Switches to the next window
+
+`:move-window -r` - Refreshes window numbering
+
+`:snap-window -t -1` - Moves current window to the left by 1
+
+## Panes
+
+`prefix + z` - Toggle panel zoom
+
+`prefix + %` - Split window horizontal
+
+`prefix + "` - Split window vertical
+
+`prefix + o` - Switch to next pane
+
+`prefix + !` - Convert pane into window
+
+`prefix + q` - Show pane numbers
+
+`prefix + q 0..9` - Select pane by number
+
+## Copy Mode
+
+`prefix + [` - Enter copy mode
+
+`\pattern` - Search down
+
+# VIM
+
+## Tips
+
+`%` - Means across all lines
+
+`/g` - Means global, otherwise only execute once per line
+
+## Commands
 
 `:e file` - Opens file inside Vi.
 
@@ -377,93 +445,299 @@ git add -p 	# enter patch-mode to select hunks of a file to be commited
 
 `:wq` - Writes and quits.
 
-### Command Mode
-
-`dd` - Deletes a whole line.
-
-`v` - Starts copy.
-
-`y` - Copies character under cursor.
-
-`yy` - "Yanks" the whole line.
-
-`12yy` - "Yanks" 12 lines.
-
-`x` - Cuts character under cursor.
-
-`p` - Pastes "yanked."
-
-`i` - Insert mode.
-
-`a` - Insert at end of current line.
-
-`Esc` - Return to command mode.
-
-`u` - Undo last change.
-
-`Ctrl + R` - Redo
-
-`/text` - Search for 'text' after the cursor.
-
-`n` - Find next occurrence after searching.
-
-`gg` - Takes you to the top of the code.
-
-`=` - Fixes indents.
-
-`G` - Fixes indents throughout the whole file.
-
-`G$` - End of file.
-
-`gg dG` - Deletes all lines in file
-
-`:f` - Show file info?
-
-### Config
-
 `:noh` - Clear last search highlight.
 
 `:set number` - Enables line numbers
 
-### Buffer
+`:f` - Show file info?
 
+## Insert Mode
 
+`i` - Insert at cursor.
 
-## Windows 10
+`I` - Insert at beginning of line.
 
-### File Explorer
+`a` - Insert after cursor.
+
+`A` - Insert at end of current line.
+
+`o` - Append a newline after current.
+
+`O` - Append a newline above current.
+
+`Ctrl + w` - Delete word backwards.
+
+`Ctrl + h` - Delete character backwards.
+
+`Ctrl + t` - Indent one.
+
+`Ctrl + d` - De-indent one.
+
+`Ctrl + n` - (Auto-Complete) Next match.
+
+`Ctrl + p` - (Auto-Complete) Previous match.
+
+`Ctrl + o` - Temporarily enter Normal Mode to enter a single command.
+
+## Cursor Movement
+
+`h,j,k,l` - Move cursor left,down,up,right
+
+`H` - Move cursor to top of screen
+
+`M` - Move cursor to middle of screen
+
+`L` - Move cursor to bottom of screen
+
+`w` - Jump forwards to the start of a word
+
+`W` - Jump forwards to the start of a word (with punctuation)
+
+`e` - Jump forwards to the end of a word
+
+`E` - Jump forwards to the end of a word (with punctuation)
+
+`b` - Jump backwards to the start of a word
+
+`B` - Jump backwards to the start of a word (with punctuation)
+
+`%` - Jump cursor to matching pair: '()', '[]', '{}'
+
+`0` - Jump cursor to start of the line
+
+`^` - Jump cursor to the first non-blank character of the line
+
+`$` - Jump cursor to the end of the line
+
+`g_` - Jump cursor to the last non-blank character of the line
+
+`gg` - Goes to first position of buffer
+
+`G` - Goes to last position of buffer
+
+`5gg` `5G` - Go to line 5
+
+`}` - Jump to next paragraph (or code block)
+
+`{` - Jump to previous paragraph (or code block)
+
+`zz` - Center screen on cursor
+
+`zt` - Moves screen so cursor is on top
+
+`zb` - Moves screen so cursor is on bottom
+
+`Ctrl + e` - Moves screen down one line
+
+`Ctrl + y` - Moves screen up one line
+
+`Ctrl + f` - Moves screen up down page
+
+`Ctrl + b` - Moves screen up one page
+
+`Ctrl + d` - Move cursor and screen down half a page
+
+`Ctrl + u` - Move cursor and screen up half a page
+
+*Prefix a cursor move with a number to repeat. Ex. `50j` moves down 50 lines.*
+
+## Editing
+
+`r` - Replace character under cursor
+
+`R` - Replace characters until ESC is pressed
+
+`J` - Join line below with current, with a space between
+
+`cc` `S` - Replace entire line
+
+`c$` `Ctrl + c` - Replace line from cursor to end
+
+`ciw` - Replace entire word
+
+`cw` `ce` - Replace entire word from cursor
+
+`u` - Undo
+
+`U` - restore (undo) last changed line
+
+`Ctrl + r` - redo
+
+`s` - Delete character and substitute text
+
+`.` - Repeat last command
+
+## Macros
+
+`qa` - Record macro named a
+
+`q` - Stop recording
+
+`@a` - Run macro named a
+
+`@@` - Rerun last run macro
+
+## Copy, Cut & Paste
+
+`yy` - Yank (copy) a line
+
+`2yy` - Yank (copy) two lines
+
+`yw` - Yank the characters of the word from the cursor to the start of the next word
+
+`yiw` - Yank the word under the cursor
+
+`y$` - Yank from the cursor to the end of the line
+
+`p` - Put (paste) after cursor
+
+`P` - Put (paste) before cursor
+
+`dd` - Delete line
+
+`2dd` - Delete two lines
+
+`dw` - Delete word from cursor to next word
+
+`db` - Deletes from cursor to beginning of word
+
+`dw` - Deletes word
+
+`d[h,j,k,l]` - Deletes in the direction
+
+`d[^,$]` - Deletes from the cursor to the beginning or end of the line, respectively.
+
+`:3,5d` - Delete line 3 to 5
+
+`diw` - Delete word under cursor
+
+`gg dG` - Deletes all lines in buffer
+
+`x` - Delete character
+
+`:g/{pattern}/d` - Delete all lines containing pattern
+
+`:g!/{pattern}/d` - Delete all lines NOT containing pattern
+
+## Indent text
+
+`>>` - Indent line one shift-width
+
+`>>` - De-indent line one shift-width
+
+`gg=G` - Re-indents entire buffer
+
+`>%` - Indent block (cursor on brace)
+
+`<%` - De-indent block (cursor on brace)
+
+## Visual Mode
+
+`v` - Enter visual mode, mark lines, then do a command
+
+`V` - Enter visual mode with line selected
+
+`o` - Move cursor to other end of marked area
+
+`O` - Move cursor to other corner of marked block
+
+`aw` - Mark a word
+
+`ab` `a(` - Mark a block with ()
+
+`aB` `a{` - Mark a block with {}
+
+`at` - Mark a block with <> tags
+
+`ib` `i(` - Mark an inner block with ()
+
+`iB` `i{` - Mark an inner block with {}
+
+`it` - Mark an inner block with <> tags
+
+## Visual mode commands
+
+`y` - Yank marked
+
+`d` - Delete marked
+
+`>` - Shift right
+
+`<` - Shift left
+
+`~` - Switch case
+
+`u` - Changed marked to lowercase
+
+`U` - Changed marked to uppercase
+
+## Marks
+
+`:marks` - Lists marks
+
+`ma` - Sets current position for mark 'a'
+
+``a` - Jumps to position for mark 'a'
+
+``0` - Jumps to position where vim was previously exited
+
+`:ju[mps]` - Lists of jumps
+
+`:changes` - Lists of changes
+
+## Search & Replace
+
+`/pattern` - Search ahead for pattern
+
+`?pattern` - Search backwards for pattern
+
+`n` - Repeat search in same direction
+
+`N` - Repeat search in opposite direction
+
+`:noh` - Remove search highlight
+
+`:%s/old/new/g` - Replace all old with new throughout buffer
+
+`:%s/old/new/gc` - Replace all old with new throughout buffer with confirmations
+
+`/orig/new` - Replace text
+
+# Windows
+
+## File Explorer
 
 `F2` - Renames directory/file.
 
-`Ctrl + X` - Cuts to clipboard.
+`Ctrl + x` - Cuts to clipboard.
 
-`Ctrl + C` - Copies to clipboard.
+`Ctrl + c` - Copies to clipboard.
 
-`Ctrl + V` - Paste clipboard.
+`Ctrl + v` - Paste clipboard.
 
-`Ctrl + Shift + V` - Format paste.
+`Ctrl + Shift + v` - Format paste.
 
-`Ctrl + Z` - Undo.
+`Ctrl + z` - Undo.
 
-`Ctrl + Y` - Redo.
+`Ctrl + y` - Redo.
 
 `Alt + ArrowKeys` - Backwards & Forwards through history.
 
-### Desktop
+## Desktop
 
-`Win + ArrowKeys` - Moves window to different monitor.
+`Win + ArrowKeys` - Moves window to different monitor, or min/max.
 
 `Win + DownKey` - Minimizes everything.
 
-`Win + D` - Hides everything and brings you to Desktop.
+`Win + d` - Shows desktop.
 
-`Win + P` - Changes multi-display layout.
+`Win + p` - Changes multi-display layout.
 
-`Win + L` - Locks computer.
+`Win + l` - Locks computer.
 
-`Win + Shift + S` - Snipping Screenshot.
+`Win + Shift + s` - Snipping Screenshot.
 
-`Win + X` - Admin Panel.
+`Win + x` - Admin Panel.
 
 `Ctrl + Shift + Esc` - Task Manager.
 
@@ -473,17 +747,19 @@ git add -p 	# enter patch-mode to select hunks of a file to be commited
 
 `Shift + F3` - Changes case in Word...
 
-`Win + A` - Opens Action Center.
+`Win + a` - Opens Action Center.
 
-`Win + I` - Opens Settings.
+`Win + i` - Opens Settings.
 
-`Win + M` - Minimizes all Windows.
+`Win + m` - Minimizes all Windows.
 
 `Win + Home` - Minimizes all but Current Window.
 
 `Win + ,` - Quick Desktop Peak.
 
-### Virtual Desktops
+`Win + .` - Emoji & Gifs.
+
+## Virtual Desktops
 
 `Win + Ctrl + D` - New Desktop.
 
@@ -493,9 +769,9 @@ git add -p 	# enter patch-mode to select hunks of a file to be commited
 
 
 
-## Blender
+# Blender
 
-### Camera
+## Camera
 
 `MB3` - Orbiting the view; rotating the view.
 
@@ -511,7 +787,7 @@ git add -p 	# enter patch-mode to select hunks of a file to be commited
 
 `Alt + MB3 Click Drag` - Snap to nearest view angle.
 
-### General Keys
+## General Keys
 
 `G` - Grab
 
@@ -565,7 +841,7 @@ git add -p 	# enter patch-mode to select hunks of a file to be commited
 
 `J` - Join vertices.
 
-### Tips
+## Tips
 
 - To make a donut less perfect, goto **Edit Mode**, turn on proportional edit, click a point and then hit G. Now scroll down to narrow the area affected.
 
@@ -581,11 +857,11 @@ git add -p 	# enter patch-mode to select hunks of a file to be commited
 
 - Turn on snapping to face when moving things: top of the window click **Snap**, then **Face** and **Project Individual Elements**.
 
-## Gimp2
+# Gimp2
 
 `[ ]` - Increase/decrease size of brush.
 
-#### Paths Tool
+## Paths Tool
 
 `Ctrl + Click` - Adds a new node.
 
@@ -593,7 +869,7 @@ git add -p 	# enter patch-mode to select hunks of a file to be commited
 
 `Shift + Ctrl + Click` - Delete node.
 
-## Chrome
+# Chrome
 
 `Ctrl + W` - Closes Tab.
 
@@ -610,7 +886,7 @@ git add -p 	# enter patch-mode to select hunks of a file to be commited
 `Alt + ArrowKeys` - History: back & forward.
 
 
-## MySQL
+# MySQL
 
 `DROP TABLE [IF EXISTS] <name>;`
 
@@ -632,8 +908,10 @@ git add -p 	# enter patch-mode to select hunks of a file to be commited
 
 `SELECT * FROM <table> WHERE <condition>;`
 
+`EXPLAIN ...query` - Shows query execution plan.
 
-## Docker
+# Docker
+
 `docker info`
 
 `docker ps -a`
@@ -677,12 +955,15 @@ git add -p 	# enter patch-mode to select hunks of a file to be commited
 `docker stats` - Container resource usage information
 
 
-## PHP
+# PHP
 
-`php -S localhost:8080` - Built-in PHP dev web-server
+## CLI
 
-`php -S localhost:8080 -c /etc/php/7.2/apache2/php.ini ` - Built-in PHP web-server with specific ini file.
+`php -S localhost:8080 [-c ./php.ini]` - Built-in PHP dev web-server, with option specific ini file.
 
+## Examples
+
+### Class Auto-Loader
 ```php
 // PHP Class Auto-loader
 spl_autoload_register(function ($class) {
@@ -690,6 +971,7 @@ spl_autoload_register(function ($class) {
 });
 ```
 
+### Convert errors to exceptions
 ```php
 // PHP Convert Errors to Exceptions
 set_error_handler(function($errorNumber, $errorMessage, $errorFile, $errorLine) {
@@ -697,6 +979,7 @@ set_error_handler(function($errorNumber, $errorMessage, $errorFile, $errorLine) 
 });
 ```
 
+### Register shutdown function
 ```php
 // PHP Register Shut-down Function - Handle Errors
 register_shutdown_function(function() {
@@ -707,4 +990,3 @@ register_shutdown_function(function() {
     }
 });
 ```
-
