@@ -387,6 +387,8 @@ git reset --hard origin/remote
 
 `prefix + )` - Switch to the next session
 
+`prefix + L` - Switch to the last active session
+
 ## Windows
 
 `prefix + c` - Creates new window
