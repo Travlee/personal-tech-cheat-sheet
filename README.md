@@ -375,6 +375,8 @@ git reset --hard origin/remote
 
 ## Sessions
 
+`:new` - Creates new session while inside Tmux
+
 `prefix + d` - Detach
 
 `prefix + $` - Rename session
