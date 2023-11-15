@@ -1,5 +1,5 @@
 # Tech Cheat Sheet
-Cheat codes for all things tech
+Various software keybinds and other helpful references
 
 # Visual Studio Code
 `Ctrl + W` - Closes active file
