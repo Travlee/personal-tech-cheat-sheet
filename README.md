@@ -525,6 +525,8 @@ git reset --hard origin/remote
 
 `{` - Jump to previous paragraph (or code block)
 
+`[[` `]]` - Jump to next/previous symbol?
+
 `zz` - Center screen on cursor
 
 `zt` - Moves screen so cursor is on top
