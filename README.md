@@ -635,6 +635,12 @@ git reset --hard origin/remote
 
 `<%` - De-indent block (cursor on brace)
 
+## Folding
+
+`zR` - Unfold all
+
+`zM` - Fold all
+
 ## Visual Mode
 
 `v` - Enter visual mode, mark lines, then do a command
