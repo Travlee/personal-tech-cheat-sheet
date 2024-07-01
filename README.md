@@ -419,13 +419,19 @@ git reset --hard origin/remote
 
 `prefix + "` - Split window vertical
 
+`prefix + x` - Kill pane
+
 `prefix + o` - Switch to next pane
+
+`prefix + ;` - Switch to last pane
 
 `prefix + !` - Convert pane into window
 
 `prefix + q` - Show pane numbers
 
 `prefix + q 0..9` - Select pane by number
+
+`:join-pane -s 2 -t 1` - Join Window2 with Window1 as panes
 
 ## Copy Mode
 
@@ -456,6 +462,12 @@ git reset --hard origin/remote
 `:set number` - Enables line numbers
 
 `:f` - Show file info?
+
+`q/` - Search history; `:q` to close
+
+`q:` - Command history; `:q` to close
+
+`:help <topic>` - Shows help; `:q` to close
 
 ## Insert Mode
 
