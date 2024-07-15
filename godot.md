@@ -23,6 +23,10 @@
  - `Ctrl + Alt + Shift + Drag` - Scale uniform node.
  - `Alt + 1` - <CUSTOM> Switch to 2D editor.
  - `Alt + 2` - <CUSTOM> Switch to script editor.
+ - `F8` - Stops running project
+ - `F5` - Run project
+ - `F6` - Run scene
+ - `F7` - Pause running project
 
 ### Scene Tree
  - `Ctrl + A` - Add new node.
