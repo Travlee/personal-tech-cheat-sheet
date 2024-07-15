@@ -28,6 +28,16 @@
 
 `:help <topic>` - Shows help; `:q` to close
 
+`:rRex[plore]` - Return to Explorer
+
+`:Sex` - Split view with file
+
+`:Vex` - Vertical split with file
+
+`:Tex` - Tab with file
+
+`:Ex` - File Explorer
+
 ## Insert Mode
 
 `i` - Insert at cursor.
@@ -42,6 +52,10 @@
 
 `O` - Append a newline above current.
 
+`ZZ` - Quit and save.
+
+`ZQ` - Quit without saving.
+
 `Ctrl + w` - Delete word backwards.
 
 `Ctrl + h` - Delete character backwards.
@@ -55,6 +69,8 @@
 `Ctrl + p` - (Auto-Complete) Previous match.
 
 `Ctrl + o` - Temporarily enter Normal Mode to enter a single command.
+
+`Ctrl + O` - Jump to previous (older) location, not necessarily a buffer
 
 ## Cursor Movement
 
@@ -262,9 +278,9 @@
 
 `ma` - Sets current position for mark 'a'
 
-``a` - Jumps to position for mark 'a'
+`a` - Jumps to position for mark 'a'
 
-``0` - Jumps to position where vim was previously exited
+`0` - Jumps to position where vim was previously exited
 
 `:ju[mps]` - Lists of jumps
 
