@@ -6,6 +6,7 @@
  - `Ctrl + F1/F2/F3` - Switch to 2D/3D/Script view, respectively.
  - `Ctrl + Tab` - Switch tab forwards.
  - `Ctrl + Shift + Tab` - Switch tab backwards.
+ - `Ctrl + Shift + Q` - Quit to project list
  - `F` - Center viewport onto the selected node?
  - `W` - Move Mode
  - `Q` - Select Mode
@@ -27,6 +28,7 @@
  - `F5` - Run project
  - `F6` - Run scene
  - `F7` - Pause running project
+ - `Shift + F12` - Expand bottom (debug) panel
 
 ### Scene Tree
  - `Ctrl + A` - Add new node.
