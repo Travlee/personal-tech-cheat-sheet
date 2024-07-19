@@ -121,3 +121,22 @@ git fetch
 # reset your local to remote
 git reset --hard origin/remote
 ```
+
+### Git Tagging
+
+#### Make Tags
+You can make an annotated tag for a release version:
+`git tag -a v0.0.1`
+
+Adding a message to the tag:
+`git tag -a v0.0.1 -m "Marking first usable version of our lovely software!"`
+
+#### Display tags
+
+`git tag`, `git tag -l 'v0.0.*'`, `git tag -l -n3` - Listing tags
+
+`git show v0.0.1` - Shows all tag info
+
+#### Push Tags
+
+`git push origin <tag>` - Safest way to push tags; just push the one you for sure want at remote
