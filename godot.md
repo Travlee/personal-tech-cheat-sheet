@@ -43,8 +43,14 @@
  - `Ctrl + Shift + F11 - Focus mode.
  - `Ctrl + R` - Replace modal.
  - `Ctrl + Shift + ,/.` - Go to next/previous script file, respectively.
- - `Ctrl + Alt + O` - Quick open script.
- - `Ctrl + Shift + O` - Quick open scene.
+ - `Ctrl + Alt + O` - Quick open script
+ - `Ctrl + Shift + O` - Quick open scene
+
+## Debugging
+`F5` - Runs project
+`F10` - Steps over
+`F11` - Steps into
+
 
 ## Tips
  - Collion layers define which layer the object is in, while mark defines which layers it can interact with.
