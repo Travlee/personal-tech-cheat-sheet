@@ -16,6 +16,9 @@ vim zsh**
 
 cd config**<TAB>
 
+# list of all hosts
+ssh **<TAB> 
+
 ```
 
 

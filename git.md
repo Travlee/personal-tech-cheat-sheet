@@ -122,6 +122,18 @@ git fetch
 git reset --hard origin/remote
 ```
 
+### Interactive Staging
+[Source](https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging)
+```bash
+git add -i
+
+# `u` or `2` for Update (add to staging)
+
+# 1 ... n to add specific file to staging
+
+# <enter> to finish adding
+```
+
 ### Git Tagging
 
 #### Make Tags

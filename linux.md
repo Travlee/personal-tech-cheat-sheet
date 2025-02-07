@@ -181,4 +181,7 @@ if [ -L /path/to/link ]; then echo "Found link!"; fi
 # Test for file
 if [ -e /path/to/file ]; then echo "Found file!"; fi
 
+# Make dir and change into it faster
+mkdir dir_name && cd $_
+
 ```
