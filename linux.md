@@ -3,6 +3,8 @@
 ## Admin
 `lastlog` - Shows a list of all accounts and their date of login
 
+'last -a | grep ssh` - Shows all users logged in with ssh
+
 `apt-cache search <string>` - With Debian systems, searches packages for pattern
 
 `apt-get update && apt-get upgrade` - Updates package-list THEN installs new packages
@@ -112,6 +114,8 @@
 `curl [-I = headers,] <url>` - Curl
 
 `history | grep <filter>` - Search bash history
+
+`less +G /path/to/file` - Opens less at bottom of file
 
 ## Terminal/Shell
 

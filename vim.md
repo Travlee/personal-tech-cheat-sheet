@@ -214,6 +214,13 @@
 
 `:g!/{pattern}/d` - Delete all lines NOT containing pattern
 
+## Fix pasting issues
+Will disable auto-formatting when pasting.
+```
+:set paste
+:set nopaste
+```
+
 ## Indent text
 
 `>>` - Indent line one shift-width

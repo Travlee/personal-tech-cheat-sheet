@@ -18,6 +18,8 @@
 
 `docker system prune`
 
+`docker inspect [container_name] | grep IDADDRESS` - Gets IP for container
+
 `docker create -v /var/lib/mysql --name mysqldata mysql:5.7` - Creates a data volume with the mysql image
 
 `docker run --name dev-container -volumes-from mysqldata -e MYSQL_ROOT_PASSWORD=root -p 3307:3306 base-image:latest`
