@@ -117,6 +117,14 @@
 
 `less +G /path/to/file` - Opens less at bottom of file
 
+`cd -` - Changes to last directory
+
+`^wrong^right` - Changes the first occurance of 'wrong' in the previous command to 'right'
+
+` [command]` - Running a command with a leading space can sometimes keep it from history	
+
+`ps aux | head -n 10 | column -t` - Nicely format data with delimiter
+
 ## Terminal/Shell
 
 `Shift + PageUp/Down` - Scroll lines in terminal.
@@ -136,6 +144,12 @@
 `Ctrl + r` - Bash history search
 
 `Ctrl + d` - Kills shell
+
+`Ctrl + s/q` - Freeze and unfreeze your terminal
+
+`Ctrl + T` - Swap positions of characters under cursor
+
+`Alt + .` - Print argument from previous command
 
 ## Important Files
 
