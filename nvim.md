@@ -5,6 +5,11 @@
 
 # Normal Mode
 
+## Jumps
+`Ctrl + O`: Jump backwards in jump list.
+`Ctrl + I, <TAB>`: Jump forwards in jump list.
+`:jumps`: Shows jump history.
+
 ## Movement
 `Ctrl + u, Ctrl + d`: Scroll half a screen up and down, respectively.
 `zz`: Center screen on current line.
@@ -13,4 +18,11 @@
 `,': Repeats the last search backwards.
 `t{char}, T{char}`: Similiar to `f` but places cursor on peceding character.
 
+
 ## 
+
+
+# Insert Mode
+
+## Misc
+`Ctrl + O`: Exits insert for a single command then drops back to Insert mode. Ex. `Ctrl + O u`: undos last change then back to insert.
